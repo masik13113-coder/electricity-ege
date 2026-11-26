@@ -106,7 +106,7 @@ sudo apt install -y git zip unzip openjdk-17-jdk python3-pip python3-venv \
     libncursesw5-dev libtinfo6 cmake libffi-dev libssl-dev
 python3 -m venv ~/.venv-buildozer
 source ~/.venv-buildozer/bin/activate
-pip install buildozer cython
+pip install "buildozer==1.5.0" "cython<3"
 
 buildozer -v android debug
 ```
@@ -114,9 +114,10 @@ buildozer -v android debug
 Готовый файл появится в `bin/<package.name>-<version>-arm64-v8a-debug.apk`.
 Первая сборка долгая: скачиваются SDK, NDK и собираются зависимости.
 
-Для Android в `buildozer.spec` зафиксирован `kivy==2.3.1`: под эту версию в
-python-for-android есть проверенный рецепт. На компьютере можно ставить
-`kivy==2.3.2` из `requirements.txt` — приложение использует общий API.
+Для Android зафиксирована проверенная связка: p4a `v2024.01.21`, Python 3.11,
+Kivy 2.3.0, NDK 25b, API 33. Более новые p4a используют Python 3.14, под который
+старые pyjnius/Kivy ещё не собраны, поэтому не меняйте эти версии без
+необходимости. На компьютере можно ставить `kivy==2.3.2` из `requirements.txt`.
 
 ## Как устроен проект
 

@@ -69,8 +69,10 @@ git push -u origin main
 - GitHub ещё не включил Actions — включите во вкладке Actions.
 - Лимит времени/места раннера — повторите запуск: кэш SDK часто переживает
   повторный запуск.
-- В `buildozer.spec` для Android зафиксирован `kivy==2.3.1` — не меняйте его на
-  2.3.2 без необходимости: под 2.3.2 в p4a может не быть совместимого рецепта.
+- В `buildozer.spec` зафиксирована проверенная связка: p4a `v2024.01.21`,
+  Python 3.11, Kivy 2.3.0, NDK 25b, API 33. Не меняйте её на самые новые
+  версии: p4a master использует Python 3.14, под который pyjnius/Kivy ещё не
+  собраны.
 - Ошибка p4a, связанная с Cython — выполните `python3 -m pip install "cython<3"`,
   затем `buildozer android clean` и повторите сборку.
 
@@ -131,7 +133,7 @@ sudo apt install -y git zip unzip openjdk-17-jdk python3-pip python3-venv \
 
 python3 -m venv ~/.venv-buildozer
 source ~/.venv-buildozer/bin/activate
-pip install --upgrade pip buildozer cython
+pip install --upgrade pip "buildozer==1.5.0" "cython<3"
 java -version   # должна быть 17.x
 ```
 
