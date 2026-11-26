@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 120
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # На раннере уже стоит Android SDK (~9 ГБ), но buildozer скачивает свой.
       # Удаляем лишнее, чтобы NDK 28c и сборка не упёрлись в диск.
