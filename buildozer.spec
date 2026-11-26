@@ -12,9 +12,10 @@ source.exclude_dirs = tests,tools,docs,.ui-shots,.ui-data,.test-artifacts,.git,.
 
 version = 1.0.0
 
-# Только необходимое: Kivy и стандартная библиотека Python.
-# Никаких тяжёлых UI-библиотек и картинок.
-requirements = python3,kivy==2.3.2
+# Kivy 2.3.1 — версия, для которой в python-for-android есть готовый
+# проверенный рецепт. На компьютере можно использовать 2.3.2: код приложения
+# не зависит от различий этих версий.
+requirements = python3,kivy==2.3.1
 
 orientation = portrait
 fullscreen = 0
