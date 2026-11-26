@@ -11,10 +11,22 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # На раннере уже стоит Android SDK (~9 ГБ), но buildozer скачивает свой.
+      # Удаляем лишнее, чтобы NDK 28c и сборка не упёрлись в диск.
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo apt-get clean
+          df -h
 
       - name: Set up Java 17
         uses: actions/setup-java@v4
@@ -32,13 +44,18 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install --upgrade buildozer cython
 
-      - name: Build debug APK
-        run: buildozer -v android debug
+      # Для телефона достаточно arm64. Сборка двух архитектур сразу —
+      # это двойная компиляция Kivy/Python и лишние гигабайты.
+      - name: Build debug APK (arm64)
+        run: |
+          sed -i 's|^android.archs.*|android.archs = arm64-v8a|' buildozer.spec
+          grep -n '^android.archs' buildozer.spec
+          buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: electricity-ege-apk
+          name: electricity-ege-apk-arm64
           path: bin/*.apk
           if-no-files-found: error
           retention-days: 30
