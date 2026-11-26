@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "title": "Электричество",
+  "lessons": [
+    {
+      "id": "charge",
+      "title": "Электрический заряд",
+      "subtitle": "Два знака, квантование и закон сохранения",
+      "minutes": 9,
+      "questions": 5,
+      "file": "01-charge.json"
+    },
+    {
+      "id": "coulomb",
+      "title": "Закон Кулона",
+      "subtitle": "Сила взаимодействия точечных зарядов",
+      "minutes": 10,
+      "questions": 5,
+      "file": "02-coulomb.json"
+    },
+    {
+      "id": "field",
+      "title": "Электрическое поле",
+      "subtitle": "Напряжённость, суперпозиция и линии поля",
+      "minutes": 11,
+      "questions": 5,
+      "file": "03-field.json"
+    },
+    {
+      "id": "potential",
+      "title": "Потенциал и напряжение",
+      "subtitle": "Работа поля, разность потенциалов, связь E и U",
+      "minutes": 11,
+      "questions": 5,
+      "file": "04-potential.json"
+    },
+    {
+      "id": "capacitor",
+      "title": "Конденсатор",
+      "subtitle": "Электроёмкость, энергия и соединения",
+      "minutes": 12,
+      "questions": 5,
+      "file": "05-capacitor.json"
+    },
+    {
+      "id": "current",
+      "title": "Постоянный ток",
+      "subtitle": "Сила тока, заряд и сопротивление проводника",
+      "minutes": 11,
+      "questions": 5,
+      "file": "06-current.json"
+    },
+    {
+      "id": "circuits",
+      "title": "Закон Ома и соединения",
+      "subtitle": "Расчёт цепей: последовательно и параллельно",
+      "minutes": 13,
+      "questions": 6,
+      "file": "07-circuits.json"
+    },
+    {
+      "id": "power",
+      "title": "Работа и мощность тока",
+      "subtitle": "Джоуль—Ленц, киловатт-час и стоимость",
+      "minutes": 10,
+      "questions": 5,
+      "file": "08-power.json"
+    },
+    {
+      "id": "emf",
+      "title": "Полная цепь и ЭДС",
+      "subtitle": "Внутреннее сопротивление и КПД источника",
+      "minutes": 12,
+      "questions": 5,
+      "file": "09-emf.json"
+    },
+    {
+      "id": "media",
+      "title": "Ток в средах",
+      "subtitle": "Металлы, электролиты, газы и полупроводники",
+      "minutes": 12,
+      "questions": 5,
+      "file": "10-media.json"
+    },
+    {
+      "id": "exam",
+      "title": "Практикум ЕГЭ",
+      "subtitle": "Смешанные задачи и типичные ловушки",
+      "minutes": 15,
+      "questions": 6,
+      "file": "11-exam.json"
+    }
+  ]
+}

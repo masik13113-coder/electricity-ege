@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Тесты и инструменты разработки
+.pytest_cache/
+pytest-cache-files-*/
+.test-artifacts/
+.ui-shots/
+.ui-data/
+
+# Kivy / Android
+.kivy/
+.buildozer/
+bin/
+*.apk
+*.aab
+
+# База прогресса (создаётся при запуске)
+progress.sqlite3
+progress.sqlite3-wal
+progress.sqlite3-shm
